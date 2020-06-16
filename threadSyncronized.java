@@ -7,6 +7,26 @@ class counter {
     }
 }
 
+//Or Use AtomicInteget which is thread-safe
+//Some thread-safe variable stringBuffer, concurrentHashmap..
+import java.util.concurrent.atomic;
+
+class counter {
+    AtomicInteger counter = new AtomicInteger();
+    public void increment() {
+        counter.incrementAndGet();
+    }
+}
+
+class counter {
+    Ato counter = 0;
+    //synchronized make a method or variable thread safety
+    //syncronized makes sure only one thread uses the method
+    public synchronized void increment() {
+        counter++;
+    }
+}
+
 public class Main
 {
 	public static void main(String[] args) throws Exception {
